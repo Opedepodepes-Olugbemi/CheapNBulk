@@ -46,7 +46,7 @@ class BulkOption(models.Model):
 class Buyer(models.Model):
     """Buyer's profile"""
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='profile_pics/default.jpg',  
+    image = models.ImageField(default='buyer_pic/default.jpg',  
                                      upload_to='profile_pics')
     address = models.CharField(max_length=30, null=True)
     lga = models.CharField(max_length=30, null=True)
