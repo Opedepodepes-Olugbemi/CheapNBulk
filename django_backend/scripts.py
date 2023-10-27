@@ -2,20 +2,21 @@
 # reference_id = str(uuid.uuid4())
 # print(reference_id)
 # 
-from dotenv import load_dotenv
-import httplib, urllib, base64, uuid,json
+# from dotenv import load_dotenv
+import http.client as httplib
+import urllib, base64, uuid,json
 import os
 
-load_dotenv()
+# load_dotenv()
 headers = {
     # Request headers
-    'X-Reference-Id': os.environ.get("REF_ID"),
+    'X-Reference-Id': "db7269f4-e7de-435c-83ec-3026660b02e6",
     'Content-Type': 'application/json',
-    'Ocp-Apim-Subscription-Key': os.environ.get("PRIMARY_KEY"),
+    'Ocp-Apim-Subscription-Key': "e619a30053ea4f4e93c2938977af8585",
 }
-params = urllib.urlencode({})
+params = urllib.parse.urlencode({})
 body = json.dumps({
-  "providerCallbackHost":  os.environ.get("DOMAIN") })
+  "providerCallbackHost": "51.20.212.22" })
 try:
     conn = httplib.HTTPSConnection('ericssonbasicapi2.azure-api.net')
     conn.request("POST", "/v1_0/apiuser?%s" % params, body, headers)
@@ -26,28 +27,28 @@ try:
     print(data)
     conn.close()
 except Exception as e:
-    print("[Errno {0}] {1}".format(e.errno, e.strerror))
+    print(e)
 
-<VirtualHost *:80>
-  ServerName 51.20.212.22
-  DocumentRoot /home/ubuntu/CheapNBulk/django_backend
+# <VirtualHost *:80>
+#   ServerName 51.20.212.22
+#   DocumentRoot /home/ubuntu/CheapNBulk/django_backend
   
-  Alias /static/ /home/ubuntu/CheapNBulk/django_backend/static
+#   Alias /static/ /home/ubuntu/CheapNBulk/django_backend/static
   
-  <Directory /home/ubuntu/CheapNBulk/django_backend/static>
-    Require all granted
-  </Directory>
+#   <Directory /home/ubuntu/CheapNBulk/django_backend/static>
+#     Require all granted
+#   </Directory>
   
-  WSGIDaemonProcess django_backend python-home=/home/ubuntu/.venv python-path=/home/ubuntu/CheapNBulk/django_backend
-   WSGIProcessGroup django_backend
-  WSGIScriptAlias / /home/ubuntu/CheapNBulk/django_backend/django_backend/wsgi.py
+#   WSGIDaemonProcess django_backend python-home=/home/ubuntu/.venv python-path=/home/ubuntu/CheapNBulk/django_backend
+#    WSGIProcessGroup django_backend
+#   WSGIScriptAlias / /home/ubuntu/CheapNBulk/django_backend/django_backend/wsgi.py
   
-  <Directory /home/ubuntu/CheapNBulk/django_backend/django_backend>
-    <Files wsgi.py>
-      Require all granted
-    </Files>
-  </Directory>
-</VirtualHost>
+#   <Directory /home/ubuntu/CheapNBulk/django_backend/django_backend>
+#     <Files wsgi.py>
+#       Require all granted
+#     </Files>
+#   </Directory>
+# </VirtualHost>
 
 # <VirtualHost *:80>
 #         # The ServerName directive sets the request scheme, hostname and port that

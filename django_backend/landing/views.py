@@ -18,8 +18,8 @@ class LandingView(View):
     """
     def get(self, request):
         if request.user.is_authenticated:
-            return redirect('/home')
-        return render(request, 'landing.html')
+            return render(request, 'index.html')
+        return render(request, 'index.html')
 
 class HomeView(View):
     """
@@ -27,8 +27,8 @@ class HomeView(View):
     """
     def get(self, request):
         if request.user.is_authenticated:
-            return render(request, 'landing.html')
-        return render(request, 'landing.html')
+            return render(request, 'index.html')
+        return render(request, 'index.html')
 
 class CheckOutView(View):
     """
@@ -47,6 +47,15 @@ class ProductView(View):
         if request.user.is_authenticated:
             return render(request, 'product.html')
         return render(request, 'product.html')
+
+class WishlistView(View):
+    """
+        Returns Wishlist page
+    """
+    def get(self, request):
+        if request.user.is_authenticated:
+            return render(request, 'wishlist.html')
+        return render(request, 'wishlist.html')
 
 class UserRegView(View):
     def post(self, request):
