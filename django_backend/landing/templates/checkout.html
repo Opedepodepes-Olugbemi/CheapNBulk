@@ -1,28 +1,253 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <script src="https://widget.northeurope.cloudapp.azure.com:9443/v0.1.0/mobile-money-widget-mtn.js"></script>
-        <meta charset="UTF-8">
-        <title>Page Title</title>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-
-        <img src="img_la.jpg" alt="LA" style="width:100%">
-
-        <div class="">
-            <h1>This is a Heading</h1>
-            <p>This is a paragraph.</p>
-            <p>This is another paragraph.</p>
+{% load static %}
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'styleguide.css' %}" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <div class="element-checkout">
+        <div class="div">
+          <div class="order-summery">
+            <div class="div-2">
+              <div class="text-wrapper">Order Summery</div>
+              <div class="product">
+                <div class="product-2">
+                  <div class="div-3">
+                    <img class="image" src='{% static "ck_img/image-2.png" %}' />
+                    <div class="text-wrapper-2">Green Capsicum</div>
+                    <div class="text-wrapper-2">x5</div>
+                  </div>
+                  <div class="text-wrapper-3">585.00</div>
+                </div>
+                <div class="product-2">
+                  <div class="div-3">
+                    <img class="img" src='{% static "ck_img/image.png" %}' />
+                    <div class="text-wrapper-2">Red Capsicum</div>
+                    <div class="text-wrapper-2">x1</div>
+                  </div>
+                  <div class="text-wrapper-3">183.00</div>
+                </div>
+              </div>
+              <div class="total">
+                <div class="div-4">
+                  <div class="text-wrapper-4">Subtotal:</div>
+                  <div class="text-wrapper-5">952.00</div>
+                </div>
+                <img class="line" src='{% static "ck_img/line-38.svg" %}' />
+                <div class="div-4">
+                  <div class="text-wrapper-4">Shipping:</div>
+                  <div class="text-wrapper-5">Free</div>
+                </div>
+                <img class="line" src='{% static "ck_img/line-39.svg" %}' />
+                <div class="total-2">
+                  <div class="text-wrapper-6">Total:</div>
+                  <div class="element-commerce">1060.00</div>
+                </div>
+              </div>
+            </div>
+            <button class="button"><div class="normal-2">Place Order</div></button>
+          </div>
+          <div class="overlap">
+            <div class="zip-code">
+              <label class="text-wrapper-8" for="input-1">Zip Code</label>
+              <input class="input-field" placeholder="Zip Code" type="text" id="input-1" />
+            </div>
+            <div class="frame">
+              <div class="group">
+                <div class="phone">
+                  <label class="text-wrapper-8" for="input-2">Phone</label>
+                  <input class="email" placeholder="Phone number" type="tel" id="input-2" />
+                </div>
+                <div class="email-2">
+                  <input class="input" placeholder="Email" type="email" />
+                  <input class="email" placeholder="Email Address" type="email" />
+                </div>
+                <div class="states">
+                  <div class="text-wrapper-8">States</div>
+                  <div class="input-field-2">
+                    <div class="text-wrapper-9">Selects</div>
+                    <img class="chevron-down" src='{% static "ck_img/chevron-down.svg" %}' />
+                  </div>
+                </div>
+                <div class="country-region">
+                  <div class="text-wrapper-8">Country / Region</div>
+                  <div class="input-field-2">
+                    <div class="text-wrapper-10">Select</div>
+                    <img class="chevron-down" src='{% static "ck_img/chevron-down.svg" %}' />
+                  </div>
+                </div>
+                <div class="street-address">
+                  <label class="text-wrapper-8" for="input-3">Street Address</label>
+                  <input class="input-field-3" placeholder="Email" type="email" id="input-3" />
+                </div>
+                <div class="company-name">
+                  <p class="p"><span class="span">Company Name </span> <span class="text-wrapper-11">(optional)</span></p>
+                  <input class="filled-gmail-com" placeholder="Company name" type="text" />
+                </div>
+                <div class="last-name">
+                  <input class="input" placeholder="Last name" type="text" />
+                  <input class="filled-gmail-com-wrapper" placeholder="Your last name" type="text" />
+                </div>
+                <div class="first-name">
+                  <input class="input" placeholder="First name" type="text" />
+                  <input class="filled-gmail-com" placeholder="Your first name" type="text" />
+                </div>
+                <div class="text-wrapper-12">Billing Information</div>
+                <div class="cash-on-delivery">
+                  <div class="checkbox"></div>
+                  <p class="text-wrapper-4">Ship to a different address</p>
+                </div>
+              </div>
+              <img class="line-2" src='{% static "ck_img/line-55.svg" %}' />
+              <div class="additional-info">
+                <div class="text-wrapper-13">Additional Info</div>
+                <div class="first-name-2">
+                  <div class="text-wrapper-8">Order Notes (Optional)</div>
+                  <div class="div-wrapper">
+                    <p class="filled-gmail-com-2">Notes about your order, e.g. special notes for delivery</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="navigation">
+            <div class="small-one">
+              <div class="div-5">
+                <img class="map-pin" src='{% static "ck_img/map-pin.png" %}' />
+                <p class="text-wrapper-14">Store Location: Lincoln- 344, Illinois, Chicago, USA</p>
+              </div>
+              <div class="links">
+                <div class="div-3">
+                  <div class="text-wrapper-15">Eng</div>
+                  <img class="group-2" src='{% static "ck_img/group.png" %}' />
+                </div>
+                <div class="div-3">
+                  <div class="text-wrapper-15">USD</div>
+                  <img class="group-2" src='{% static "ck_img/group-2.png" %}' />
+                </div>
+                <img class="devider" src='{% static "ck_img/devider.svg" %}' />
+                <div class="account">
+                  <div class="text-wrapper-16">Sign In</div>
+                  <div class="text-wrapper-16">/</div>
+                  <div class="text-wrapper-16">Sign Up</div>
+                </div>
+              </div>
+            </div>
+            <div class="midle">
+              <div class="logo">
+                <img class="img-3" src='{% static "ck_img/plant-1.svg" %}' />
+                <div class="ecobazar">Cheap ‘N’ Bulk</div>
+              </div>
+              <div class="search">
+                <div class="searech">
+                  <img class="search-2" src='{% static "ck_img/search.svg" %}' />
+                  <div class="text-wrapper-17">Search</div>
+                </div>
+                <button class="button-2"><div class="text-wrapper-18">Search</div></button>
+              </div>
+              <div class="icons">
+                <img class="img-3" src='{% static "ck_img/heart.svg" %}' />
+                <img class="devider-2" src='{% static "ck_img/devider-2.svg" %}' />
+                <div class="shopping-card">
+                  <div class="cart">
+                    <div class="no"><div class="text-wrapper-19">2</div></div>
+                  </div>
+                  <div class="info">
+                    <div class="text-wrapper-20">Shopping cart:</div>
+                    <div class="text-wrapper-21">$57.00</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="nav-links">
+              <div class="nav-links-2">
+                <div class="nav-links-3">
+                  <div class="text-wrapper-22">Home</div>
+                  <img class="chevron-down" src='{% static "ck_img/chevron-down-2.svg" %}' />
+                </div>
+                <div class="nav-links-3">
+                  <div class="home-3">Shop</div>
+                  <img class="chevron-down" src='{% static "ck_img/chevron-down-3.svg" %}' />
+                </div>
+                <div class="nav-links-3">
+                  <div class="home-3">Pages</div>
+                  <img class="chevron-down" src='{% static "ck_img/chevron-down-3.svg" %}' />
+                </div>
+                <div class="nav-links-3">
+                  <div class="home-3">Blog</div>
+                  <img class="chevron-down" src='{% static "ck_img/chevron-down-3.svg" %}' />
+                </div>
+                <div class="nav-links-3"><div class="home-3">About Us</div></div>
+                <div class="nav-links-3"><div class="home-3">Contact Us</div></div>
+              </div>
+              <div class="div-5">
+                <img class="phonecall" src='{% static "ck_img/phonecall-1.svg" %}' />
+                <div class="text-wrapper-3">(219) 555-0114</div>
+              </div>
+            </div>
+          </div>
+          <div class="footer">
+            <div class="footer-2">
+              <div class="fotter">
+                <div class="company">
+                  <div class="div-5">
+                    <img class="img-3" src='{% static "ck_img/plant-1-2.png" %}' />
+                    <div class="ecobazar-2">Cheap ‘N’ Bulk</div>
+                  </div>
+                  <p class="text-wrapper-26">
+                    Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum magna congue
+                    nec.
+                  </p>
+                  <div class="CTA">
+                    <button class="button-4"><div class="text-wrapper-27">(219) 555-0114</div></button>
+                    <div class="text-wrapper-28">or</div>
+                    <button class="button-4"><div class="text-wrapper-27">Proxy@gmail.com</div></button>
+                  </div>
+                </div>
+                <div class="my-account">
+                  <div class="text-wrapper-29">My Account</div>
+                  <div class="div-2">
+                    <div class="text-wrapper-30">My Account</div>
+                    <div class="text-wrapper-31">Order History</div>
+                    <div class="text-wrapper-32">Shoping Cart</div>
+                    <div class="text-wrapper-31">Wishlist</div>
+                  </div>
+                </div>
+                <div class="help">
+                  <div class="text-wrapper-29">Helps</div>
+                  <div class="div-2">
+                    <div class="text-wrapper-30">Contact</div>
+                    <div class="text-wrapper-31">Faqs</div>
+                    <div class="text-wrapper-31">Terms &amp; Condition</div>
+                    <div class="text-wrapper-31">Privacy Policy</div>
+                  </div>
+                </div>
+                <div class="proxy">
+                  <div class="text-wrapper-29">Proxy</div>
+                  <div class="div-2">
+                    <div class="text-wrapper-30">About</div>
+                    <div class="text-wrapper-31">Shop</div>
+                    <div class="text-wrapper-31">Product</div>
+                    <div class="text-wrapper-31">Track Order</div>
+                  </div>
+                </div>
+                <div class="categories">
+                  <div class="text-wrapper-29">Categories</div>
+                  <div class="div-2">
+                    <div class="text-wrapper-30">Fruit &amp; Vegetables</div>
+                    <div class="text-wrapper-31">Meat &amp; Fish</div>
+                    <div class="text-wrapper-31">Bread &amp; Bakery</div>
+                    <div class="text-wrapper-31">Beauty &amp; Health</div>
+                  </div>
+                </div>
+              </div>
+              <div class="copyright">
+                <p class="ecobazar-ecommerce">Cheap ‘N’ Bulk&nbsp;&nbsp;© 2023. All Rights Reserved</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="mobile-money-qr-payment"></div>
-        <div 
-            class="mobile-money-qr-payment" 
-            data-api-user-id="b12d7b22-3057-4c8e-ad50-63904171d18c" 
-            data-amount="100" 
-            data-currency="EUR" 
-            data-external-id="144-123-323" >
-        </div>
-    </body>
+      </div>
+  </body>
 </html>

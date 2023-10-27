@@ -8,6 +8,7 @@ urlpatterns = [
     path('', views.LandingView.as_view()),
     path('home/', views.HomeView.as_view(),name='homepage'),
     path('checkout/', views.CheckOutView.as_view(),name='checkout'),
+    path('product/', views.ProductView.as_view(),name='product'),
     path('register/', views.UserRegView.as_view()),
     path('login/', views.LoginView.as_view(),name='login'),
     path('logout/', views.LogoutView.as_view(),name='logout'),

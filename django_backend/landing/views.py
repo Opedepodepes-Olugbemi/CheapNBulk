@@ -39,6 +39,15 @@ class CheckOutView(View):
             return render(request, 'checkout.html')
         return render(request, 'checkout.html')
 
+class ProductView(View):
+    """
+        Returns Product page
+    """
+    def get(self, request):
+        if request.user.is_authenticated:
+            return render(request, 'product.html')
+        return render(request, 'product.html')
+
 class UserRegView(View):
     def post(self, request):
         phone = request.POST.get("phone")
